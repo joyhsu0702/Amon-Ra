@@ -61,12 +61,13 @@ a{
 
 
 /* =========================================================
-   圖片設定
+   GitHub 圖片設定
+   圖片與 index.html 放在同一層
 ========================================================= */
 
 .amonra-page{
-  --hero-image:url("https://blog.mychumi.com/wp-content/uploads/2026/10/hero.jpg");
-  --wine-image:url("https://blog.mychumi.com/wp-content/uploads/2026/10/Amon-Ra-2022.jpg");
+  --hero-image:url("./hero.jpg");
+  --wine-image:url("./Amon-Ra-2022.jpg");
 }
 
 
@@ -87,13 +88,6 @@ a{
   text-transform:uppercase;
 }
 
-.amonra-title{
-  margin:0;
-  font-family:"Noto Serif TC",serif;
-  font-weight:500;
-  letter-spacing:2px;
-}
-
 .amonra-copy{
   color:#c9c2b8;
   font-size:15px;
@@ -104,7 +98,7 @@ a{
 
 /* =========================================================
    HERO
-   使用 hero.jpg
+   使用 GitHub：hero.jpg
 ========================================================= */
 
 .amonra-hero{
@@ -153,10 +147,8 @@ a{
 
 .amonra-hero-small{
   color:var(--gold-light);
-
   font-size:13px;
   letter-spacing:6px;
-
   margin-bottom:22px;
 }
 
@@ -164,10 +156,8 @@ a{
   margin:0;
 
   font-family:"Inter",sans-serif;
-
   font-size:clamp(65px,11vw,150px);
   line-height:.9;
-
   font-weight:700;
   letter-spacing:-4px;
 
@@ -178,21 +168,17 @@ a{
   margin-top:22px;
 
   font-family:"Noto Serif TC",serif;
-
   font-size:clamp(20px,3vw,34px);
 
   letter-spacing:5px;
-
   color:var(--gold-light);
 }
 
 .amonra-hero-description{
   margin-top:28px;
-
   max-width:600px;
 
   font-family:"Noto Serif TC",serif;
-
   font-size:18px;
   line-height:2;
 
@@ -202,7 +188,6 @@ a{
 .amonra-stats{
   display:flex;
   flex-wrap:wrap;
-
   gap:45px;
 
   margin-top:55px;
@@ -210,7 +195,6 @@ a{
 
 .amonra-stat{
   border-left:1px solid var(--gold);
-
   padding-left:17px;
 }
 
@@ -221,7 +205,6 @@ a{
   line-height:1;
 
   color:var(--gold-light);
-
   font-weight:600;
 }
 
@@ -233,7 +216,6 @@ a{
   color:#aaa39a;
 
   font-size:10px;
-
   letter-spacing:1.5px;
 }
 
@@ -307,7 +289,6 @@ a{
 
 .amonra-intro-grid{
   display:grid;
-
   grid-template-columns:1fr 1fr;
 
   gap:90px;
@@ -317,7 +298,6 @@ a{
 
 .amonra-intro-number{
   font-size:150px;
-
   line-height:.8;
 
   font-weight:700;
@@ -340,7 +320,7 @@ a{
 
 /* =========================================================
    QUOTE
-   使用 Amon-Ra-2022.jpg
+   使用 GitHub：Amon-Ra-2022.jpg
 ========================================================= */
 
 .amonra-quote{
@@ -354,12 +334,11 @@ a{
       rgba(10,10,10,.88)
     ),
     var(--wine-image)
-    center / cover fixed;
+    center / cover no-repeat;
 }
 
 .amonra-quote-inner{
   width:min(900px,90%);
-
   margin:auto;
 
   text-align:center;
@@ -412,7 +391,6 @@ a{
 
 .amonra-story-header{
   max-width:700px;
-
   margin-bottom:80px;
 }
 
@@ -511,8 +489,7 @@ a{
 
 /* =========================================================
    TERROIR
-   改用 Amon-Ra-2022.jpg
-   不再使用不存在的 Barossa-Valley-Ebenezer.jpg
+   使用 GitHub：Amon-Ra-2022.jpg
 ========================================================= */
 
 .amonra-terroir{
@@ -536,7 +513,6 @@ a{
 
 .amonra-terroir-content{
   width:min(1180px,90%);
-
   margin:auto;
 }
 
@@ -848,7 +824,7 @@ a{
 
 /* =========================================================
    FINAL CTA
-   使用 hero.jpg
+   使用 GitHub：hero.jpg
 ========================================================= */
 
 .amonra-final{
@@ -899,7 +875,7 @@ a{
 
 
 /* =========================================================
-   CTA BUTTON
+   CTA
 ========================================================= */
 
 .amonra-btn{
@@ -973,7 +949,7 @@ a{
 
 
 /* =========================================================
-   右側浮動洽詢按鈕
+   浮動式線上洽詢
    高反差香檳金
 ========================================================= */
 
@@ -1117,13 +1093,11 @@ a{
 
   .amonra-hero h1{
     font-size:68px;
-
     letter-spacing:-3px;
   }
 
   .amonra-hero-subtitle{
     font-size:19px;
-
     letter-spacing:3px;
   }
 
@@ -1218,7 +1192,7 @@ a{
   }
 
 
-  /* 浮動按鈕 */
+  /* 手機浮動洽詢 */
 
   .amonra-chatwoot-float{
     top:auto;
@@ -1231,7 +1205,6 @@ a{
     flex-direction:row;
 
     width:auto;
-
     min-height:auto;
 
     padding:13px 20px;
@@ -1310,7 +1283,7 @@ a{
 
 
 <!-- =====================================================
-     浮動式線上洽詢
+     浮動洽詢按鈕
 ====================================================== -->
 
 <a
@@ -1354,6 +1327,7 @@ a{
 
       <div class="amonra-stat">
         <span class="amonra-stat-number">96</span>
+
         <span class="amonra-stat-label">
           ROBERT PARKER WINE ADVOCATE
         </span>
@@ -1361,6 +1335,7 @@ a{
 
       <div class="amonra-stat">
         <span class="amonra-stat-number">96</span>
+
         <span class="amonra-stat-label">
           JAMES HALLIDAY
         </span>
@@ -1368,6 +1343,7 @@ a{
 
       <div class="amonra-stat">
         <span class="amonra-stat-number">2037</span>
+
         <span class="amonra-stat-label">
           DRINKING WINDOW
         </span>
@@ -1489,6 +1465,7 @@ a{
 
 <!-- =====================================================
      QUOTE
+     Amon-Ra-2022.jpg
 ====================================================== -->
 
 <section class="amonra-quote">
@@ -1633,7 +1610,7 @@ a{
 
 <!-- =====================================================
      TERROIR
-     Amon-Ra-2022.jpg
+     使用 Amon-Ra-2022.jpg
 ====================================================== -->
 
 <section class="amonra-terroir">
