@@ -11,36 +11,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  padding:0;
-  background:#090909;
-  color:#f3eee5;
-  font-family:"Inter","Noto Sans TC",sans-serif;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-a{
-  text-decoration:none;
-}
-
-.amonra-page{
+:root{
   --black:#090909;
   --black2:#11100f;
   --gold:#c7a66a;
@@ -49,210 +24,402 @@ a{
   --muted:#aaa39a;
   --red:#471d1d;
   --line:rgba(199,166,106,.28);
+}
 
-  width:100%;
-  overflow:hidden;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
   background:var(--black);
+  color:var(--cream);
+  font-family:"Noto Serif TC",serif;
+  line-height:1.9;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+section{
+  position:relative;
+  overflow:hidden;
 }
 
 
 /* =========================================================
-   共用
+   FLOATING CHATWOOT
 ========================================================= */
 
-.amonra-container{
-  width:min(1180px,90%);
-  margin:0 auto;
+.amonra-chatwoot-float{
+  position:fixed;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:9999;
+
+  width:58px;
+  min-height:165px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+
+  background:linear-gradient(
+    180deg,
+    #f2d99e 0%,
+    #c7a66a 50%,
+    #a9874d 100%
+  );
+
+  color:#111;
+
+  border-radius:12px 0 0 12px;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.45),
+    0 0 25px rgba(228,201,141,.18);
+
+  transition:.3s ease;
 }
 
-.amonra-eyebrow{
-  margin-bottom:18px;
-  color:var(--gold-light);
-  font-size:12px;
+.amonra-chatwoot-float:hover{
+  width:68px;
+  background:linear-gradient(
+    180deg,
+    #ffe8ad 0%,
+    #d7b976 50%,
+    #b79557 100%
+  );
+}
+
+.amonra-chatwoot-icon{
+  font-family:Arial,sans-serif;
+  font-size:22px;
+  line-height:1;
+}
+
+.amonra-chatwoot-text{
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+
+  font-family:"Noto Serif TC",serif;
+  font-size:14px;
+  font-weight:600;
   letter-spacing:4px;
-  text-transform:uppercase;
-}
-
-.amonra-copy{
-  color:#c9c2b8;
-  font-size:15px;
-  line-height:2;
-  letter-spacing:1px;
 }
 
 
 /* =========================================================
    HERO
-   GitHub：hero.jpg
 ========================================================= */
 
 .amonra-hero{
-  position:relative;
   min-height:100vh;
 
   display:flex;
   align-items:center;
+  justify-content:center;
+
+  text-align:center;
 
   background:
     linear-gradient(
-      90deg,
-      rgba(0,0,0,.88) 0%,
-      rgba(0,0,0,.62) 42%,
-      rgba(0,0,0,.28) 100%
+      180deg,
+      rgba(0,0,0,.48),
+      rgba(0,0,0,.82)
     ),
-    url("./hero.jpg")
-    center center / cover no-repeat;
+    url("./hero.jpg") center center / cover no-repeat;
 }
 
 .amonra-hero::after{
   content:"";
+
   position:absolute;
   inset:0;
 
   background:
     linear-gradient(
-      180deg,
-      rgba(0,0,0,.15),
-      transparent 40%,
-      rgba(0,0,0,.8)
+      90deg,
+      transparent,
+      rgba(199,166,106,.08),
+      transparent
     );
 
   pointer-events:none;
 }
 
-.amonra-hero-content{
+.amonra-hero-inner{
   position:relative;
   z-index:2;
 
-  width:min(1180px,90%);
-  margin:auto;
+  width:min(1100px,90%);
 
-  padding:120px 0 90px;
+  padding:100px 0;
 }
 
-.amonra-hero-small{
+.amonra-eyebrow{
+  margin-bottom:24px;
+
   color:var(--gold-light);
-  font-size:13px;
-  letter-spacing:6px;
-  margin-bottom:22px;
-}
-
-.amonra-hero h1{
-  margin:0;
 
   font-family:"Inter",sans-serif;
-  font-size:clamp(65px,11vw,150px);
-  line-height:.9;
-  font-weight:700;
-  letter-spacing:-4px;
+  font-size:12px;
+  letter-spacing:6px;
+  font-weight:500;
+}
+
+.amonra-title{
+  font-family:"Inter",sans-serif;
+
+  font-size:clamp(58px,11vw,150px);
+
+  font-weight:500;
+
+  letter-spacing:8px;
+
+  line-height:.95;
 
   color:#fff;
 }
 
-.amonra-hero-subtitle{
-  margin-top:22px;
+.amonra-subtitle{
+  margin-top:28px;
 
-  font-family:"Noto Serif TC",serif;
-  font-size:clamp(20px,3vw,34px);
+  font-family:"Inter",sans-serif;
+
+  font-size:clamp(14px,2vw,20px);
 
   letter-spacing:5px;
-  color:var(--gold-light);
+
+  color:#ded7cb;
 }
 
-.amonra-hero-description{
-  margin-top:28px;
-  max-width:600px;
+.amonra-hero-copy{
+  max-width:700px;
 
-  font-family:"Noto Serif TC",serif;
-  font-size:18px;
-  line-height:2;
+  margin:45px auto 0;
 
-  color:#eee7dd;
+  color:#eee6db;
+
+  font-size:clamp(17px,2vw,22px);
+
+  line-height:2.1;
+
+  letter-spacing:2px;
 }
 
-.amonra-stats{
+.amonra-hero-stats{
+  margin-top:60px;
+
   display:flex;
-  flex-wrap:wrap;
-  gap:45px;
 
-  margin-top:55px;
+  justify-content:center;
+
+  gap:70px;
 }
 
 .amonra-stat{
-  border-left:1px solid var(--gold);
-  padding-left:17px;
+  min-width:110px;
 }
 
 .amonra-stat-number{
-  display:block;
-
-  font-size:32px;
-  line-height:1;
-
   color:var(--gold-light);
-  font-weight:600;
+
+  font-family:"Inter",sans-serif;
+
+  font-size:38px;
+
+  font-weight:400;
+
+  line-height:1;
 }
 
 .amonra-stat-label{
-  display:block;
-
-  margin-top:9px;
+  margin-top:12px;
 
   color:#aaa39a;
 
-  font-size:10px;
-  letter-spacing:1.5px;
+  font-size:11px;
+
+  letter-spacing:2px;
 }
 
 
 /* =========================================================
-   權威評分
+   PRICE
+========================================================= */
+
+.amonra-price{
+  padding:55px 0;
+
+  background:#0d0c0b;
+
+  border-bottom:1px solid var(--line);
+}
+
+.amonra-price-inner{
+  width:min(900px,90%);
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  border:1px solid var(--line);
+}
+
+.amonra-price-item{
+  padding:35px 40px;
+
+  text-align:center;
+
+  background:#11100f;
+}
+
+.amonra-price-item:first-child{
+  border-right:1px solid var(--line);
+}
+
+.amonra-price-label{
+  color:#8f887f;
+
+  font-family:"Inter",sans-serif;
+
+  font-size:11px;
+
+  letter-spacing:3px;
+
+  margin-bottom:15px;
+}
+
+.amonra-price-number{
+  color:var(--gold-light);
+
+  font-family:"Inter",sans-serif;
+
+  font-size:clamp(30px,4vw,44px);
+
+  font-weight:500;
+
+  letter-spacing:1px;
+
+  line-height:1.2;
+}
+
+.amonra-price-unit{
+  margin-top:8px;
+
+  color:#b7afa5;
+
+  font-family:"Noto Serif TC",serif;
+
+  font-size:14px;
+
+  letter-spacing:2px;
+}
+
+.amonra-price-item:last-child{
+  background:
+    linear-gradient(
+      145deg,
+      rgba(199,166,106,.10),
+      rgba(17,16,15,.98)
+    );
+}
+
+.amonra-price-item:last-child .amonra-price-number{
+  color:#f0d59b;
+}
+
+
+/* =========================================================
+   AUTHORITY
 ========================================================= */
 
 .amonra-authority{
-  background:#11100f;
+  padding:70px 0;
 
-  border-top:1px solid var(--line);
+  background:#0b0b0b;
+
   border-bottom:1px solid var(--line);
 }
 
 .amonra-authority-inner{
+  width:min(1100px,90%);
+
+  margin:auto;
+
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
+  border-top:1px solid var(--line);
+
+  border-bottom:1px solid var(--line);
 }
 
-.amonra-authority-item{
-  padding:28px 30px;
+.amonra-authority-card{
+  padding:38px 25px;
+
+  text-align:center;
 
   border-right:1px solid var(--line);
 }
 
-.amonra-authority-item:last-child{
+.amonra-authority-card:last-child{
   border-right:0;
 }
 
-.amonra-authority-score{
+.amonra-score{
   color:var(--gold-light);
 
-  font-size:27px;
-  font-weight:600;
+  font-family:"Inter",sans-serif;
+
+  font-size:54px;
+
+  line-height:1;
+
+  font-weight:500;
+}
+
+.amonra-score span{
+  font-size:20px;
 }
 
 .amonra-authority-name{
-  margin-top:7px;
+  margin-top:18px;
 
-  color:#eee7dd;
+  color:#e8e0d5;
 
-  font-size:12px;
-  letter-spacing:1px;
+  font-size:15px;
 }
 
-.amonra-authority-year{
-  margin-top:5px;
+.amonra-authority-note{
+  margin-top:7px;
 
-  color:#817b73;
+  color:#89827a;
 
-  font-size:11px;
+  font-family:"Inter",sans-serif;
+
+  font-size:10px;
+
+  letter-spacing:2px;
 }
 
 
@@ -263,17 +430,16 @@ a{
 .amonra-intro{
   padding:130px 0;
 
-  background:
-    radial-gradient(
-      circle at 80% 30%,
-      rgba(71,29,29,.35),
-      transparent 35%
-    ),
-    #0b0b0b;
+  background:var(--black);
 }
 
-.amonra-intro-grid{
+.amonra-intro-inner{
+  width:min(1050px,90%);
+
+  margin:auto;
+
   display:grid;
+
   grid-template-columns:1fr 1fr;
 
   gap:90px;
@@ -281,52 +447,68 @@ a{
   align-items:center;
 }
 
-.amonra-intro-number{
-  font-size:150px;
-  line-height:.8;
+.amonra-kicker{
+  color:var(--gold);
 
-  font-weight:700;
+  font-family:"Inter",sans-serif;
 
-  color:rgba(199,166,106,.08);
+  font-size:11px;
+
+  letter-spacing:4px;
+
+  margin-bottom:20px;
 }
 
-.amonra-intro h2{
-  margin:15px 0 30px;
+.amonra-heading{
+  color:#f5eee5;
 
-  font-family:"Noto Serif TC",serif;
+  font-size:clamp(32px,5vw,58px);
 
-  font-size:clamp(30px,4vw,48px);
+  line-height:1.35;
 
-  font-weight:500;
+  font-weight:400;
+}
 
-  line-height:1.4;
+.amonra-heading em{
+  color:var(--gold-light);
+
+  font-style:normal;
+}
+
+.amonra-body{
+  color:#aaa39a;
+
+  font-size:16px;
+
+  line-height:2.2;
 }
 
 
 /* =========================================================
    QUOTE
-   GitHub：Amon-Ra-2022.jpg
 ========================================================= */
 
 .amonra-quote{
-  position:relative;
+  min-height:620px;
 
-  padding:120px 0;
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
 
   background:
     linear-gradient(
-      rgba(10,10,10,.72),
-      rgba(10,10,10,.88)
+      rgba(0,0,0,.58),
+      rgba(0,0,0,.75)
     ),
-    url("./Amon-Ra-2022.jpg")
-    center / cover no-repeat;
+    url("./Amon-Ra-2022.jpg") center center / cover no-repeat;
 }
 
 .amonra-quote-inner{
-  width:min(900px,90%);
-  margin:auto;
-
-  text-align:center;
+  width:min(900px,88%);
 }
 
 .amonra-quote-mark{
@@ -334,31 +516,35 @@ a{
 
   font-family:Georgia,serif;
 
-  font-size:90px;
+  font-size:100px;
 
-  line-height:.5;
+  line-height:.6;
+
+  opacity:.8;
 }
 
-.amonra-quote blockquote{
-  margin:40px 0;
+.amonra-quote-text{
+  margin-top:30px;
 
-  font-family:"Noto Serif TC",serif;
+  color:#f1e9de;
 
-  font-size:clamp(22px,3vw,34px);
+  font-size:clamp(21px,3vw,34px);
 
-  line-height:1.9;
+  line-height:2;
 
-  font-weight:400;
+  font-weight:300;
 }
 
-.amonra-quote cite{
+.amonra-quote-source{
+  margin-top:35px;
+
   color:var(--gold-light);
+
+  font-family:"Inter",sans-serif;
 
   font-size:11px;
 
-  letter-spacing:4px;
-
-  font-style:normal;
+  letter-spacing:3px;
 }
 
 
@@ -369,104 +555,99 @@ a{
 .amonra-story{
   padding:130px 0;
 
-  background:#f3eee5;
-
-  color:#171514;
+  background:#0e0d0c;
 }
 
-.amonra-story-header{
-  max-width:700px;
+.amonra-story-inner{
+  width:min(1000px,90%);
+
+  margin:auto;
+}
+
+.amonra-story-title{
+  text-align:center;
+
   margin-bottom:80px;
 }
 
-.amonra-story-header .amonra-eyebrow{
-  color:#846b42;
+.amonra-story-title h2{
+  font-size:clamp(34px,5vw,60px);
+
+  font-weight:400;
 }
 
-.amonra-story-header h2{
-  font-family:"Noto Serif TC",serif;
+.amonra-story-title p{
+  margin-top:15px;
 
-  font-size:clamp(32px,5vw,55px);
+  color:var(--gold);
 
-  font-weight:500;
+  font-family:"Inter",sans-serif;
 
-  line-height:1.4;
+  font-size:11px;
+
+  letter-spacing:4px;
 }
 
 .amonra-timeline{
   position:relative;
+
+  border-left:1px solid var(--line);
+
+  padding-left:50px;
 }
 
-.amonra-timeline::before{
+.amonra-timeline-item{
+  position:relative;
+
+  padding-bottom:70px;
+}
+
+.amonra-timeline-item:last-child{
+  padding-bottom:0;
+}
+
+.amonra-timeline-item::before{
   content:"";
 
   position:absolute;
 
-  left:105px;
-  top:0;
-  bottom:0;
+  left:-56px;
+  top:5px;
 
-  width:1px;
+  width:11px;
+  height:11px;
 
-  background:#b9a98e;
+  background:var(--gold);
+
+  border-radius:50%;
+
+  box-shadow:0 0 0 6px #0e0d0c;
 }
 
-.amonra-timeline-item{
-  display:grid;
+.amonra-year{
+  color:var(--gold-light);
 
-  grid-template-columns:210px 1fr;
-
-  position:relative;
-
-  padding:0 0 65px;
-}
-
-.amonra-timeline-year{
-  color:#927747;
+  font-family:"Inter",sans-serif;
 
   font-size:13px;
 
   letter-spacing:3px;
 }
 
-.amonra-timeline-content{
-  position:relative;
+.amonra-event{
+  margin-top:10px;
 
-  padding-left:40px;
+  color:#eee7dc;
+
+  font-size:22px;
 }
 
-.amonra-timeline-content::before{
-  content:"";
+.amonra-event-copy{
+  margin-top:10px;
 
-  position:absolute;
+  color:#938c84;
 
-  left:-5px;
-  top:3px;
-
-  width:10px;
-  height:10px;
-
-  background:#927747;
-
-  border-radius:50%;
-}
-
-.amonra-timeline-content h3{
-  margin:0 0 12px;
-
-  font-family:"Noto Serif TC",serif;
-
-  font-size:25px;
-
-  font-weight:500;
-}
-
-.amonra-timeline-content p{
-  margin:0;
-
-  max-width:700px;
-
-  color:#615c55;
+  font-size:15px;
 
   line-height:2;
 }
@@ -474,79 +655,86 @@ a{
 
 /* =========================================================
    TERROIR
-   GitHub：Amon-Ra-2022.jpg
 ========================================================= */
 
 .amonra-terroir{
-  min-height:700px;
+  min-height:720px;
 
   display:flex;
-  align-items:center;
 
-  position:relative;
+  align-items:center;
 
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.92),
-      rgba(0,0,0,.62),
-      rgba(0,0,0,.3)
+      rgba(0,0,0,.86),
+      rgba(0,0,0,.52)
     ),
-    url("./Amon-Ra-2022.jpg")
-    center / cover no-repeat;
+    url("./Amon-Ra-2022.jpg") center center / cover no-repeat;
 }
 
-.amonra-terroir-content{
-  width:min(1180px,90%);
+.amonra-terroir-inner{
+  width:min(1100px,90%);
+
   margin:auto;
 }
 
-.amonra-terroir-box{
-  max-width:650px;
+.amonra-terroir-content{
+  width:min(620px,100%);
 }
 
 .amonra-terroir h2{
-  margin:0 0 30px;
+  font-size:clamp(38px,6vw,70px);
 
-  font-family:"Noto Serif TC",serif;
+  font-weight:400;
 
-  font-size:clamp(36px,5vw,65px);
-
-  font-weight:500;
-
-  line-height:1.35;
+  line-height:1.2;
 }
 
-.amonra-terroir-grid{
+.amonra-terroir p{
+  margin-top:30px;
+
+  color:#c0b8ae;
+
+  font-size:16px;
+
+  line-height:2.2;
+}
+
+.amonra-terroir-data{
+  margin-top:45px;
+
   display:grid;
 
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(3,1fr);
 
-  gap:15px;
-
-  margin-top:45px;
+  gap:20px;
 }
 
-.amonra-terroir-card{
-  padding:22px;
+.amonra-terroir-data div{
+  padding:20px 0;
 
-  background:rgba(0,0,0,.5);
-
-  border:1px solid var(--line);
+  border-top:1px solid var(--line);
 }
 
-.amonra-terroir-card strong{
+.amonra-terroir-data strong{
   display:block;
-
-  margin-bottom:7px;
 
   color:var(--gold-light);
 
-  font-size:25px;
+  font-family:"Inter",sans-serif;
+
+  font-size:26px;
+
+  font-weight:400;
 }
 
-.amonra-terroir-card span{
-  color:#aaa39a;
+.amonra-terroir-data span{
+  display:block;
+
+  margin-top:5px;
+
+  color:#8f8981;
 
   font-size:11px;
 
@@ -561,37 +749,47 @@ a{
 .amonra-winemaking{
   padding:130px 0;
 
-  background:#11100f;
+  background:#0a0a0a;
+}
+
+.amonra-winemaking-inner{
+  width:min(1100px,90%);
+
+  margin:auto;
 }
 
 .amonra-winemaking-header{
-  max-width:750px;
+  max-width:720px;
 
   margin-bottom:70px;
 }
 
 .amonra-winemaking-header h2{
-  margin:0;
+  font-size:clamp(36px,5vw,62px);
 
-  font-family:"Noto Serif TC",serif;
-
-  font-size:clamp(34px,5vw,58px);
-
-  font-weight:500;
+  font-weight:400;
 }
 
-.amonra-process-grid{
+.amonra-winemaking-header p{
+  margin-top:20px;
+
+  color:#99928a;
+
+  line-height:2;
+}
+
+.amonra-process{
   display:grid;
 
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
 
   gap:1px;
 
   background:var(--line);
 }
 
-.amonra-process{
-  min-height:250px;
+.amonra-process-card{
+  min-height:260px;
 
   padding:35px;
 
@@ -601,29 +799,31 @@ a{
 .amonra-process-number{
   color:var(--gold);
 
-  font-size:12px;
+  font-family:"Inter",sans-serif;
+
+  font-size:11px;
 
   letter-spacing:3px;
 }
 
-.amonra-process h3{
-  margin:35px 0 15px;
+.amonra-process-card h3{
+  margin-top:35px;
 
-  font-family:"Noto Serif TC",serif;
+  color:#eee6dc;
 
   font-size:23px;
 
-  font-weight:500;
+  font-weight:400;
 }
 
-.amonra-process p{
-  margin:0;
+.amonra-process-card p{
+  margin-top:15px;
 
-  color:#969087;
+  color:#938c84;
 
-  font-size:13px;
+  font-size:14px;
 
-  line-height:1.9;
+  line-height:2;
 }
 
 
@@ -634,23 +834,42 @@ a{
 .amonra-tasting{
   padding:130px 0;
 
-  background:#080808;
+  background:
+    linear-gradient(
+      180deg,
+      #100e0d,
+      #080808
+    );
 }
 
-.amonra-tasting-header{
+.amonra-tasting-inner{
+  width:min(1100px,90%);
+
+  margin:auto;
+}
+
+.amonra-tasting-title{
   text-align:center;
 
   margin-bottom:70px;
 }
 
-.amonra-tasting-header h2{
-  margin:0;
+.amonra-tasting-title h2{
+  font-size:clamp(36px,5vw,62px);
 
-  font-family:"Noto Serif TC",serif;
+  font-weight:400;
+}
 
-  font-size:clamp(35px,5vw,58px);
+.amonra-tasting-title p{
+  margin-top:15px;
 
-  font-weight:500;
+  color:var(--gold);
+
+  font-family:"Inter",sans-serif;
+
+  font-size:11px;
+
+  letter-spacing:4px;
 }
 
 .amonra-tasting-grid{
@@ -658,63 +877,33 @@ a{
 
   grid-template-columns:repeat(4,1fr);
 
-  gap:18px;
+  gap:20px;
 }
 
 .amonra-tasting-card{
-  min-height:250px;
-
-  padding:35px;
+  padding:35px 25px;
 
   border:1px solid var(--line);
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(71,29,29,.32),
-      rgba(15,15,15,.8)
-    );
-
-  transition:.3s ease;
-}
-
-.amonra-tasting-card:hover{
-  transform:translateY(-8px);
-
-  border-color:var(--gold);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(71,29,29,.55),
-      rgba(15,15,15,.9)
-    );
-}
-
-.amonra-tasting-number{
-  color:var(--gold);
-
-  font-size:11px;
-
-  letter-spacing:3px;
+  background:rgba(255,255,255,.015);
 }
 
 .amonra-tasting-card h3{
-  margin:45px 0 15px;
+  color:var(--gold-light);
 
-  font-family:"Noto Serif TC",serif;
+  font-size:18px;
 
-  font-size:25px;
-
-  font-weight:500;
+  font-weight:400;
 }
 
 .amonra-tasting-card p{
-  color:#99938a;
+  margin-top:18px;
 
-  line-height:1.9;
+  color:#99928a;
 
-  font-size:13px;
+  font-size:14px;
+
+  line-height:2;
 }
 
 
@@ -723,178 +912,179 @@ a{
 ========================================================= */
 
 .amonra-eye{
-  padding:130px 0;
+  padding:120px 0;
 
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(199,166,106,.08),
-      transparent 45%
-    ),
-    #0b0b0b;
+  background:#050505;
 
   text-align:center;
 }
 
 .amonra-eye-symbol{
-  width:120px;
-  height:120px;
+  width:170px;
 
-  margin:0 auto 40px;
+  height:90px;
 
-  border:1px solid var(--gold);
+  margin:0 auto 45px;
 
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  transform:rotate(45deg);
+  position:relative;
 }
 
-.amonra-eye-symbol span{
-  transform:rotate(-45deg);
+.amonra-eye-symbol::before{
+  content:"";
 
-  color:var(--gold-light);
+  position:absolute;
 
-  font-size:40px;
+  left:20px;
+  right:20px;
+  top:35px;
+
+  height:2px;
+
+  background:var(--gold);
+
+  transform:skewY(-8deg);
+}
+
+.amonra-eye-symbol::after{
+  content:"";
+
+  position:absolute;
+
+  width:35px;
+  height:35px;
+
+  left:67px;
+  top:17px;
+
+  border:2px solid var(--gold);
+
+  border-radius:50%;
 }
 
 .amonra-eye h2{
-  margin:0 0 25px;
+  font-size:clamp(34px,5vw,58px);
 
-  font-family:"Noto Serif TC",serif;
-
-  font-size:clamp(36px,5vw,60px);
-
-  font-weight:500;
+  font-weight:400;
 }
 
-.amonra-eye-description{
-  max-width:700px;
+.amonra-eye p{
+  max-width:720px;
 
-  margin:auto;
+  margin:25px auto 0;
 
-  color:#aaa39a;
+  color:#918a82;
 
-  line-height:2;
+  font-size:15px;
+
+  line-height:2.2;
 }
 
 .amonra-senses{
+  width:min(800px,90%);
+
+  margin:60px auto 0;
+
   display:grid;
 
   grid-template-columns:repeat(6,1fr);
 
-  gap:10px;
-
-  margin-top:70px;
+  gap:15px;
 }
 
-.amonra-sense{
-  padding:20px 10px;
+.amonra-senses span{
+  color:#bcb4aa;
 
-  border-top:1px solid var(--line);
+  font-family:"Inter",sans-serif;
 
-  color:#9f978c;
-
-  font-size:11px;
+  font-size:9px;
 
   letter-spacing:2px;
-}
-
-.amonra-sense:first-child{
-  color:var(--gold-light);
 }
 
 
 /* =========================================================
    FINAL CTA
-   GitHub：hero.jpg
 ========================================================= */
 
 .amonra-final{
-  position:relative;
+  min-height:680px;
 
-  padding:160px 0;
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
 
   text-align:center;
 
   background:
     linear-gradient(
-      rgba(0,0,0,.65),
-      rgba(0,0,0,.9)
+      rgba(0,0,0,.68),
+      rgba(0,0,0,.82)
     ),
-    url("./hero.jpg")
-    center / cover no-repeat;
+    url("./hero.jpg") center center / cover no-repeat;
+}
+
+.amonra-final-inner{
+  width:min(900px,90%);
+}
+
+.amonra-final-kicker{
+  color:var(--gold-light);
+
+  font-family:"Inter",sans-serif;
+
+  font-size:11px;
+
+  letter-spacing:5px;
 }
 
 .amonra-final h2{
-  margin:0;
+  margin-top:25px;
 
-  font-family:"Noto Serif TC",serif;
+  font-size:clamp(42px,7vw,82px);
 
-  font-size:clamp(45px,7vw,90px);
-
-  font-weight:500;
+  font-weight:400;
 
   line-height:1.25;
 }
 
-.amonra-final h2 span{
-  color:var(--gold-light);
-}
-
 .amonra-final-copy{
+  margin:30px auto 0;
+
   max-width:720px;
 
-  margin:35px auto 45px;
+  color:#d0c8be;
 
-  color:#c4bdb3;
+  font-size:17px;
 
-  line-height:2;
-
-  font-family:"Noto Serif TC",serif;
-
-  font-size:16px;
+  line-height:2.1;
 }
 
+.amonra-cta{
+  display:inline-block;
 
-/* =========================================================
-   CTA
-========================================================= */
+  margin-top:45px;
 
-.amonra-btn{
-  display:inline-flex;
+  padding:16px 45px;
 
-  align-items:center;
-  justify-content:center;
+  border:1px solid var(--gold);
 
-  min-width:190px;
-
-  padding:17px 35px;
-
-  background:var(--gold);
-
-  color:#090909;
-
-  border:1px solid var(--gold-light);
+  color:var(--gold-light);
 
   font-family:"Noto Serif TC",serif;
 
-  font-size:14px;
+  font-size:15px;
 
   letter-spacing:3px;
 
   transition:.3s ease;
 }
 
-.amonra-btn:hover{
-  background:var(--gold-light);
+.amonra-cta:hover{
+  background:var(--gold);
 
-  box-shadow:
-    0 0 30px rgba(228,201,141,.3);
-
-  transform:translateY(-2px);
+  color:#111;
 }
 
 
@@ -907,25 +1097,25 @@ a{
 
   text-align:center;
 
-  background:#070707;
+  background:#050505;
 
   border-top:1px solid var(--line);
 }
 
 .amonra-footer-brand{
-  color:var(--gold-light);
+  color:#ddd5ca;
 
-  font-family:"Noto Serif TC",serif;
+  font-size:16px;
 
-  letter-spacing:4px;
-
-  font-size:14px;
+  letter-spacing:3px;
 }
 
 .amonra-footer-sub{
-  margin-top:10px;
+  margin-top:8px;
 
-  color:#77716a;
+  color:#746e67;
+
+  font-family:"Inter",sans-serif;
 
   font-size:9px;
 
@@ -934,319 +1124,212 @@ a{
 
 
 /* =========================================================
-   浮動式線上洽詢
+   MOBILE
 ========================================================= */
 
-.amonra-chatwoot-float{
-  position:fixed;
-
-  right:0;
-  top:50%;
-
-  transform:translateY(-50%);
-
-  z-index:999999;
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-  justify-content:center;
-
-  gap:10px;
-
-  width:54px;
-  min-height:150px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #ead29a 0%,
-      #c7a66a 50%,
-      #b28b4e 100%
-    );
-
-  color:#090909;
-
-  border:1px solid #f4dfae;
-
-  border-right:none;
-
-  border-radius:10px 0 0 10px;
-
-  box-shadow:
-    0 8px 30px rgba(0,0,0,.35),
-    0 0 18px rgba(199,166,106,.22);
-
-  transition:all .3s ease;
-}
-
-.amonra-chatwoot-float:hover{
-  width:62px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #f7e8bd 0%,
-      #e4c98d 50%,
-      #c7a66a 100%
-    );
-
-  color:#000;
-
-  box-shadow:
-    0 10px 35px rgba(0,0,0,.45),
-    0 0 28px rgba(228,201,141,.45);
-}
-
-.amonra-chatwoot-icon{
-  font-size:18px;
-
-  line-height:1;
-
-  color:#090909;
-}
-
-.amonra-chatwoot-text{
-  writing-mode:vertical-rl;
-
-  text-orientation:mixed;
-
-  font-family:"Noto Serif TC",serif;
-
-  font-size:15px;
-
-  font-weight:600;
-
-  letter-spacing:3px;
-
-  white-space:nowrap;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:900px){
-
-  .amonra-intro-grid{
-    grid-template-columns:1fr;
-    gap:30px;
-  }
-
-  .amonra-intro-number{
-    font-size:100px;
-  }
-
-  .amonra-process-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .amonra-tasting-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .amonra-senses{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-}
-
-
-@media(max-width:768px){
+@media(max-width:800px){
 
   .amonra-hero{
-    min-height:90vh;
+    min-height:850px;
 
     background:
       linear-gradient(
         180deg,
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.88)
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.84)
       ),
-      url("./hero.jpg")
-      center / cover no-repeat;
+      url("./hero.jpg") center center / cover no-repeat;
   }
 
-  .amonra-hero-content{
-    padding:100px 0 70px;
+  .amonra-hero-inner{
+    padding:80px 0;
   }
 
-  .amonra-hero h1{
-    font-size:68px;
-    letter-spacing:-3px;
+  .amonra-title{
+    font-size:clamp(52px,17vw,100px);
+
+    letter-spacing:4px;
   }
 
-  .amonra-hero-subtitle{
-    font-size:19px;
+  .amonra-subtitle{
+    font-size:12px;
+
     letter-spacing:3px;
   }
 
-  .amonra-hero-description{
-    font-size:15px;
+  .amonra-hero-copy{
+    font-size:16px;
+
+    line-height:2;
   }
 
-  .amonra-stats{
+  .amonra-hero-stats{
     gap:25px;
-    margin-top:40px;
+
+    flex-wrap:wrap;
   }
 
   .amonra-stat-number{
-    font-size:25px;
+    font-size:30px;
   }
-
-
-  /* 權威資訊 */
 
   .amonra-authority-inner{
     grid-template-columns:1fr;
   }
 
-  .amonra-authority-item{
+  .amonra-authority-card{
     border-right:0;
+
     border-bottom:1px solid var(--line);
   }
 
-  .amonra-authority-item:last-child{
+  .amonra-authority-card:last-child{
     border-bottom:0;
   }
 
-
-  /* Timeline */
-
-  .amonra-timeline::before{
-    left:0;
-  }
-
-  .amonra-timeline-item{
+  .amonra-intro-inner{
     grid-template-columns:1fr;
-    padding-left:25px;
-    padding-bottom:50px;
+
+    gap:50px;
   }
-
-  .amonra-timeline-year{
-    margin-bottom:15px;
-  }
-
-  .amonra-timeline-content{
-    padding-left:0;
-  }
-
-  .amonra-timeline-content::before{
-    left:-30px;
-  }
-
-
-  /* Terroir */
 
   .amonra-terroir{
-    min-height:750px;
+    min-height:800px;
   }
 
-  .amonra-terroir-grid{
+  .amonra-terroir-data{
     grid-template-columns:1fr;
   }
 
-
-  /* Winemaking */
-
-  .amonra-process-grid{
+  .amonra-process{
     grid-template-columns:1fr;
   }
 
+  .amonra-process-card{
+    min-height:auto;
+  }
 
-  /* Tasting */
+  .amonra-tasting-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .amonra-senses{
+    grid-template-columns:repeat(3,1fr);
+
+    row-gap:25px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE PRICE
+========================================================= */
+
+@media(max-width:600px){
+
+  .amonra-price{
+    padding:35px 0;
+  }
+
+  .amonra-price-inner{
+    grid-template-columns:1fr;
+  }
+
+  .amonra-price-item{
+    padding:30px 20px;
+  }
+
+  .amonra-price-item:first-child{
+    border-right:0;
+
+    border-bottom:1px solid var(--line);
+  }
+
+  .amonra-price-number{
+    font-size:34px;
+  }
 
   .amonra-tasting-grid{
     grid-template-columns:1fr;
   }
 
-
-  /* Senses */
-
-  .amonra-senses{
-    grid-template-columns:repeat(2,1fr);
+  .amonra-final{
+    min-height:650px;
   }
 
+  .amonra-final-copy{
+    font-size:15px;
+  }
 
-  /* 手機浮動洽詢 */
-
+  /* FLOATING BUTTON */
   .amonra-chatwoot-float{
     top:auto;
 
-    right:18px;
-    bottom:22px;
+    right:16px;
+
+    bottom:18px;
 
     transform:none;
 
-    flex-direction:row;
-
     width:auto;
+
     min-height:auto;
 
     padding:13px 20px;
 
-    border:1px solid #f4dfae;
+    flex-direction:row;
+
+    gap:9px;
 
     border-radius:30px;
-
-    gap:8px;
-
-    box-shadow:
-      0 8px 25px rgba(0,0,0,.35),
-      0 0 15px rgba(199,166,106,.25);
   }
 
   .amonra-chatwoot-float:hover{
     width:auto;
   }
 
+  .amonra-chatwoot-icon{
+    font-size:17px;
+  }
+
   .amonra-chatwoot-text{
     writing-mode:horizontal-tb;
 
-    font-size:14px;
+    font-size:13px;
 
     letter-spacing:2px;
-  }
-
-  .amonra-chatwoot-icon{
-    font-size:16px;
   }
 
 }
 
 
-@media(max-width:480px){
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
 
-  .amonra-hero h1{
-    font-size:56px;
+@media(max-width:400px){
+
+  .amonra-hero-stats{
+    gap:18px;
   }
 
-  .amonra-hero-subtitle{
-    font-size:16px;
+  .amonra-stat{
+    min-width:80px;
   }
 
-  .amonra-stats{
-    display:grid;
-    grid-template-columns:1fr 1fr;
+  .amonra-stat-number{
+    font-size:26px;
   }
 
-  .amonra-stat:last-child{
-    grid-column:1 / -1;
+  .amonra-stat-label{
+    font-size:9px;
+
+    letter-spacing:1px;
   }
 
-  .amonra-senses{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .amonra-final{
-    padding:110px 0;
-  }
-
-  .amonra-final h2{
-    font-size:45px;
+  .amonra-tasting-grid{
+    grid-template-columns:1fr;
   }
 
 }
@@ -1257,11 +1340,9 @@ a{
 
 <body>
 
-<div class="amonra-page">
 
-
-<!-- =====================================================
-     浮動洽詢按鈕
+<!-- ======================================================
+     FLOATING CONSULTATION BUTTON
 ====================================================== -->
 
 <a
@@ -1276,51 +1357,53 @@ a{
 </a>
 
 
-<!-- =====================================================
+<!-- ======================================================
      HERO
 ====================================================== -->
 
 <section class="amonra-hero">
 
-  <div class="amonra-hero-content">
+  <div class="amonra-hero-inner">
 
-    <div class="amonra-hero-small">
+    <div class="amonra-eyebrow">
       BAROSSA VALLEY · SOUTH AUSTRALIA
     </div>
 
-    <h1>AMON-RA</h1>
+    <h1 class="amonra-title">
+      AMON-RA
+    </h1>
 
-    <div class="amonra-hero-subtitle">
+    <div class="amonra-subtitle">
       THE EYE OF HORUS · SHIRAZ 2022
     </div>
 
-    <div class="amonra-hero-description">
+    <div class="amonra-hero-copy">
       強勁與優雅，並不是兩種選擇。<br>
       在 2022 Amon-Ra 裡，<br>
       它們被揉成同一種力量。
     </div>
 
-    <div class="amonra-stats">
+    <div class="amonra-hero-stats">
 
       <div class="amonra-stat">
-        <span class="amonra-stat-number">96</span>
-        <span class="amonra-stat-label">
-          ROBERT PARKER WINE ADVOCATE
-        </span>
+        <div class="amonra-stat-number">96</div>
+        <div class="amonra-stat-label">
+          ROBERT PARKER
+        </div>
       </div>
 
       <div class="amonra-stat">
-        <span class="amonra-stat-number">96</span>
-        <span class="amonra-stat-label">
+        <div class="amonra-stat-number">96</div>
+        <div class="amonra-stat-label">
           JAMES HALLIDAY
-        </span>
+        </div>
       </div>
 
       <div class="amonra-stat">
-        <span class="amonra-stat-number">2037</span>
-        <span class="amonra-stat-label">
+        <div class="amonra-stat-number">2037</div>
+        <div class="amonra-stat-label">
           DRINKING WINDOW
-        </span>
+        </div>
       </div>
 
     </div>
@@ -1330,50 +1413,108 @@ a{
 </section>
 
 
-<!-- =====================================================
+<!-- ======================================================
+     PRICE
+====================================================== -->
+
+<section class="amonra-price">
+
+  <div class="amonra-price-inner">
+
+    <div class="amonra-price-item">
+
+      <div class="amonra-price-label">
+        SINGLE BOTTLE
+      </div>
+
+      <div class="amonra-price-number">
+        NT$ 2,800
+      </div>
+
+      <div class="amonra-price-unit">
+        單瓶
+      </div>
+
+    </div>
+
+
+    <div class="amonra-price-item">
+
+      <div class="amonra-price-label">
+        6 BOTTLES
+      </div>
+
+      <div class="amonra-price-number">
+        NT$ 2,600
+      </div>
+
+      <div class="amonra-price-unit">
+        瓶 6 入 · 單瓶價
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
      AUTHORITY
 ====================================================== -->
 
 <section class="amonra-authority">
 
-  <div class="amonra-container amonra-authority-inner">
+  <div class="amonra-authority-inner">
 
-    <div class="amonra-authority-item">
-      <div class="amonra-authority-score">96</div>
+    <div class="amonra-authority-card">
+
+      <div class="amonra-score">
+        96<span>/100</span>
+      </div>
 
       <div class="amonra-authority-name">
-        ROBERT PARKER WINE ADVOCATE
+        Robert Parker Wine Advocate
       </div>
 
-      <div class="amonra-authority-year">
-        2022 Vintage
+      <div class="amonra-authority-note">
+        2022 VINTAGE
       </div>
+
     </div>
 
 
-    <div class="amonra-authority-item">
-      <div class="amonra-authority-score">96</div>
+    <div class="amonra-authority-card">
+
+      <div class="amonra-score">
+        96<span>/100</span>
+      </div>
 
       <div class="amonra-authority-name">
-        HALLIDAY WINE COMPANION
+        Halliday Wine Companion
       </div>
 
-      <div class="amonra-authority-year">
-        2022 Vintage
+      <div class="amonra-authority-note">
+        2022 VINTAGE
       </div>
+
     </div>
 
 
-    <div class="amonra-authority-item">
-      <div class="amonra-authority-score">100</div>
+    <div class="amonra-authority-card">
+
+      <div class="amonra-score">
+        100<span>/100</span>
+      </div>
 
       <div class="amonra-authority-name">
-        ROBERT PARKER
+        Robert Parker
       </div>
 
-      <div class="amonra-authority-year">
-        Historic · 2003 Amon-Ra
+      <div class="amonra-authority-note">
+        HISTORIC · 2003 AMON-RA
       </div>
+
     </div>
 
   </div>
@@ -1381,41 +1522,43 @@ a{
 </section>
 
 
-<!-- =====================================================
+<!-- ======================================================
      INTRO
 ====================================================== -->
 
 <section class="amonra-intro">
 
-  <div class="amonra-container amonra-intro-grid">
+  <div class="amonra-intro-inner">
 
     <div>
 
-      <div class="amonra-intro-number">
-        2003
+      <div class="amonra-kicker">
+        THE BEGINNING · 2003
       </div>
+
+      <h2 class="amonra-heading">
+        一瓶酒的誕生，<br>
+        有時就是一個名字<br>
+        <em>開始被世界記住。</em>
+      </h2>
 
     </div>
 
 
     <div>
 
-      <div class="amonra-eyebrow">
-        THE BEGINNING
-      </div>
+      <p class="amonra-body">
+        2003 年，年僅 30 歲的 Ben Glaetzer，
+        在 Barossa Valley 北部 Ebenezer 的老藤 Shiraz
+        上，建立了 Amon-Ra 的第一個年份。
+      </p>
 
-      <h2>
-        一瓶酒的誕生，<br>
-        有時也是一個名字的誕生。
-      </h2>
+      <br>
 
-      <p class="amonra-copy">
-        2003 年，年僅 30 歲的 Ben Glaetzer
-        開始打造 Amon-Ra。<br><br>
-
-        以 Barossa Valley 北部 Ebenezer
-        的老藤 Shiraz 為核心，將濃郁果實、
-        結構與新桶熟成，轉化成具有鮮明個性的作品。
+      <p class="amonra-body">
+        從此，Amon-Ra 成為 Glaetzer 家族最具代表性的作品之一，
+        將 Barossa Valley 的濃郁、力量與結構，
+        轉化成具有陳年潛力的經典 Shiraz。
       </p>
 
     </div>
@@ -1425,7 +1568,7 @@ a{
 </section>
 
 
-<!-- =====================================================
+<!-- ======================================================
      QUOTE
 ====================================================== -->
 
@@ -1437,38 +1580,38 @@ a{
       “
     </div>
 
-    <blockquote>
+    <div class="amonra-quote-text">
       當我想到那些我所熱愛的澳洲葡萄酒背後的推手時，
       Ben Glaetzer 這個名字，
       總是頻頻浮現於我的腦海之中。
-    </blockquote>
+    </div>
 
-    <cite>
+    <div class="amonra-quote-source">
       ROBERT PARKER
-    </cite>
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- ======================================================
      STORY
 ====================================================== -->
 
 <section class="amonra-story">
 
-  <div class="amonra-container">
+  <div class="amonra-story-inner">
 
-    <div class="amonra-story-header">
-
-      <div class="amonra-eyebrow">
-        THE STORY
-      </div>
+    <div class="amonra-story-title">
 
       <h2>
-        從 2003，走到今天。
+        THE STORY OF AMON-RA
       </h2>
+
+      <p>
+        FROM 2003 TO 2022
+      </p>
 
     </div>
 
@@ -1477,21 +1620,17 @@ a{
 
       <div class="amonra-timeline-item">
 
-        <div class="amonra-timeline-year">
+        <div class="amonra-year">
           2003
         </div>
 
-        <div class="amonra-timeline-content">
+        <div class="amonra-event">
+          Amon-Ra 第一個年份
+        </div>
 
-          <h3>
-            Amon-Ra 誕生
-          </h3>
-
-          <p>
-            Ben Glaetzer 開始以 Barossa Valley
-            老藤 Shiraz 打造 Amon-Ra。
-          </p>
-
+        <div class="amonra-event-copy">
+          Ben Glaetzer 以 Barossa Valley 北部 Ebenezer
+          的老藤 Shiraz，釀造出 Amon-Ra 第一個年份。
         </div>
 
       </div>
@@ -1499,21 +1638,17 @@ a{
 
       <div class="amonra-timeline-item">
 
-        <div class="amonra-timeline-year">
-          2003
+        <div class="amonra-year">
+          2003 — 2022
         </div>
 
-        <div class="amonra-timeline-content">
+        <div class="amonra-event">
+          老藤與風土持續累積
+        </div>
 
-          <h3>
-            首個年份作品
-          </h3>
-
-          <p>
-            Amon-Ra 逐漸建立起濃郁果實、
-            強大結構與新桶熟成的風格識別。
-          </p>
-
+        <div class="amonra-event-copy">
+          Barossa Valley 的乾燥氣候、低產量與老藤，
+          成為 Amon-Ra 強大結構與集中度的重要基礎。
         </div>
 
       </div>
@@ -1521,21 +1656,17 @@ a{
 
       <div class="amonra-timeline-item">
 
-        <div class="amonra-timeline-year">
+        <div class="amonra-year">
           2022
         </div>
 
-        <div class="amonra-timeline-content">
+        <div class="amonra-event">
+          Amon-Ra Shiraz
+        </div>
 
-          <h3>
-            2022 Vintage
-          </h3>
-
-          <p>
-            來自 Ebenezer 老藤 Shiraz，
-            在新桶中完成熟成，展現力量與平衡。
-          </p>
-
+        <div class="amonra-event-copy">
+          2022 年份呈現成熟黑色水果、香料、
+          烘烤氣息與礦物調性，並保有鮮明結構。
         </div>
 
       </div>
@@ -1543,21 +1674,17 @@ a{
 
       <div class="amonra-timeline-item">
 
-        <div class="amonra-timeline-year">
-          2024—2037
+        <div class="amonra-year">
+          2024 — 2037
         </div>
 
-        <div class="amonra-timeline-content">
+        <div class="amonra-event">
+          長時間熟成的可能
+        </div>
 
-          <h3>
-            時間是另一種釀造
-          </h3>
-
-          <p>
-            對於具有結構與集中度的 Shiraz，
-            瓶中熟成仍將持續改變其香氣與口感層次。
-          </p>
-
+        <div class="amonra-event-copy">
+          結構、果實與橡木仍將隨瓶中時間逐步融合，
+          為收藏者留下長期發展的空間。
         </div>
 
       </div>
@@ -1569,53 +1696,44 @@ a{
 </section>
 
 
-<!-- =====================================================
+<!-- ======================================================
      TERROIR
 ====================================================== -->
 
 <section class="amonra-terroir">
 
-  <div class="amonra-terroir-content">
+  <div class="amonra-terroir-inner">
 
-    <div class="amonra-terroir-box">
+    <div class="amonra-terroir-content">
 
-      <div class="amonra-eyebrow">
-        TERROIR
+      <div class="amonra-kicker">
+        EBENEZER · BAROSSA VALLEY
       </div>
 
       <h2>
-        Ebenezer<br>
-        Barossa Valley
+        乾燥、老藤、低產量。
       </h2>
 
-      <p class="amonra-copy">
-        Barossa Valley 北部的 Ebenezer，
-        是 Amon-Ra 風格的重要來源。<br><br>
-
-        老藤 Shiraz 帶來集中度與結構，
-        也讓酒款在成熟果實之外，
-        保有更深層的香氣與口感表現。
+      <p>
+        Amon-Ra 的核心來自 Barossa Valley 北部
+        Ebenezer 地區。這裡的老藤 Shiraz
+        在乾燥環境中生長，產量低而集中，
+        為葡萄帶來高度成熟度與深度。
       </p>
 
+      <div class="amonra-terroir-data">
 
-      <div class="amonra-terroir-grid">
-
-        <div class="amonra-terroir-card">
+        <div>
           <strong>50–130</strong>
           <span>VINE AGE · YEARS</span>
         </div>
 
-        <div class="amonra-terroir-card">
+        <div>
           <strong>2 t/ha</strong>
-          <span>APPROX. YIELD</span>
+          <span>YIELD</span>
         </div>
 
-        <div class="amonra-terroir-card">
-          <strong>100%</strong>
-          <span>NEW OAK</span>
-        </div>
-
-        <div class="amonra-terroir-card">
+        <div>
           <strong>16</strong>
           <span>MONTHS IN OAK</span>
         </div>
@@ -1629,55 +1747,57 @@ a{
 </section>
 
 
-<!-- =====================================================
+<!-- ======================================================
      WINEMAKING
 ====================================================== -->
 
 <section class="amonra-winemaking">
 
-  <div class="amonra-container">
+  <div class="amonra-winemaking-inner">
 
     <div class="amonra-winemaking-header">
 
-      <div class="amonra-eyebrow">
+      <div class="amonra-kicker">
         WINEMAKING
       </div>
 
       <h2>
-        力量不是偶然。
+        力量，來自精準。
       </h2>
 
-      <p class="amonra-copy">
+      <p>
         從採收、發酵到橡木桶熟成，
-        每一個階段都在建立 Amon-Ra 的結構。
+        每一個步驟都讓 Barossa Shiraz 的濃郁風格
+        保持結構與層次。
       </p>
 
     </div>
 
 
-    <div class="amonra-process-grid">
+    <div class="amonra-process">
 
-      <div class="amonra-process">
+      <div class="amonra-process-card">
 
         <div class="amonra-process-number">
-          01
+          01 · HARVEST
         </div>
 
         <h3>
-          手工採收
+          人工採收
         </h3>
 
         <p>
-          Hand Harvested
+          葡萄以人工方式採收，
+          將成熟果實完整帶回酒莊。
         </p>
 
       </div>
 
 
-      <div class="amonra-process">
+      <div class="amonra-process-card">
 
         <div class="amonra-process-number">
-          02
+          02 · FERMENTATION
         </div>
 
         <h3>
@@ -1685,18 +1805,17 @@ a{
         </h3>
 
         <p>
-          Open fermentation in
-          half-ton vats with
-          three manual punchdowns daily.
+          於半噸容量發酵槽中進行開放式發酵，
+          每日進行三次人工踩皮。
         </p>
 
       </div>
 
 
-      <div class="amonra-process">
+      <div class="amonra-process-card">
 
         <div class="amonra-process-number">
-          03
+          03 · OAK
         </div>
 
         <h3>
@@ -1704,27 +1823,10 @@ a{
         </h3>
 
         <p>
-          100% new oak
-          for approximately 16 months.
-        </p>
-
-      </div>
-
-
-      <div class="amonra-process">
-
-        <div class="amonra-process-number">
-          04
-        </div>
-
-        <h3>
-          木桶配置
-        </h3>
-
-        <p>
-          95% French oak
-          · 5% American oak
-          · Unfiltered
+          100% 新橡木桶，
+          約 16 個月熟成；
+          95% 法國橡木、5% 美國橡木，
+          不過濾裝瓶。
         </p>
 
       </div>
@@ -1736,23 +1838,23 @@ a{
 </section>
 
 
-<!-- =====================================================
+<!-- ======================================================
      TASTING
 ====================================================== -->
 
 <section class="amonra-tasting">
 
-  <div class="amonra-container">
+  <div class="amonra-tasting-inner">
 
-    <div class="amonra-tasting-header">
-
-      <div class="amonra-eyebrow">
-        TASTING NOTES
-      </div>
+    <div class="amonra-tasting-title">
 
       <h2>
-        四個方向，構成一種力量。
+        TASTING PROFILE
       </h2>
+
+      <p>
+        POWER · DEPTH · PRECISION
+      </p>
 
     </div>
 
@@ -1761,17 +1863,13 @@ a{
 
       <div class="amonra-tasting-card">
 
-        <div class="amonra-tasting-number">
-          01 · FRUIT
-        </div>
-
         <h3>
-          黑色果實
+          BLACK FRUIT
         </h3>
 
         <p>
-          深色莓果與成熟果實的集中表現，
-          形成酒款鮮明的核心。
+          深色莓果、黑色水果，
+          展現 Barossa Shiraz 的成熟果實特質。
         </p>
 
       </div>
@@ -1779,17 +1877,13 @@ a{
 
       <div class="amonra-tasting-card">
 
-        <div class="amonra-tasting-number">
-          02 · FRUIT
-        </div>
-
         <h3>
-          紅色果實
+          RED FRUIT
         </h3>
 
         <p>
-          紅色水果帶來明亮感，
-          平衡深色果實的厚度。
+          紅色水果氣息，
+          為濃郁酒體帶來鮮明的果實層次。
         </p>
 
       </div>
@@ -1797,17 +1891,13 @@ a{
 
       <div class="amonra-tasting-card">
 
-        <div class="amonra-tasting-number">
-          03 · EARTH
-        </div>
-
         <h3>
-          礦物與土地
+          MINERAL · EARTH
         </h3>
 
         <p>
-          礦物與土壤調性讓果實之外
-          多了一層深度。
+          礦物與土壤調性，
+          為成熟果實增添深度。
         </p>
 
       </div>
@@ -1815,17 +1905,13 @@ a{
 
       <div class="amonra-tasting-card">
 
-        <div class="amonra-tasting-number">
-          04 · SPICE
-        </div>
-
         <h3>
-          香料與烘烤
+          SPICE · ROAST
         </h3>
 
         <p>
-          橡木熟成帶出香料、
-          烘烤與更深層的複雜度。
+          香料與烘烤氣息，
+          與新橡木熟成形成完整結構。
         </p>
 
       </div>
@@ -1837,89 +1923,69 @@ a{
 </section>
 
 
-<!-- =====================================================
+<!-- ======================================================
      EYE OF HORUS
 ====================================================== -->
 
 <section class="amonra-eye">
 
-  <div class="amonra-container">
+  <div class="amonra-eye-symbol"></div>
 
-    <div class="amonra-eye-symbol">
-      <span>𓂀</span>
-    </div>
+  <h2>
+    THE EYE OF HORUS
+  </h2>
 
-    <h2>
-      THE EYE OF HORUS
-    </h2>
-
-    <p class="amonra-eye-description">
-      Amon-Ra 的名字源自古埃及太陽神。
-      而真正值得探索的，是當一瓶酒從香氣、
-      口感、結構到餘韻逐漸展開時，
-      它如何讓感官開始彼此連結。
-    </p>
+  <p>
+    Amon-Ra 的酒標以古埃及太陽神意象為核心，
+    象徵力量、光芒與感官。
+    一瓶酒從視覺開始，最後回到味覺。
+  </p>
 
 
-    <div class="amonra-senses">
+  <div class="amonra-senses">
 
-      <div class="amonra-sense">
-        TOUCH
-      </div>
-
-      <div class="amonra-sense">
-        TASTE
-      </div>
-
-      <div class="amonra-sense">
-        HEARING
-      </div>
-
-      <div class="amonra-sense">
-        SIGHT
-      </div>
-
-      <div class="amonra-sense">
-        SMELL
-      </div>
-
-      <div class="amonra-sense">
-        MIND
-      </div>
-
-    </div>
+    <span>TOUCH</span>
+    <span>TASTE</span>
+    <span>HEARING</span>
+    <span>SIGHT</span>
+    <span>SMELL</span>
+    <span>MIND</span>
 
   </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- ======================================================
      FINAL CTA
 ====================================================== -->
 
 <section class="amonra-final">
 
-  <div class="amonra-container">
+  <div class="amonra-final-inner">
 
-    <div class="amonra-eyebrow">
-      AMON-RA SHIRAZ 2022
+    <div class="amonra-final-kicker">
+      AMON-RA SHIRAZ · 2022
     </div>
 
     <h2>
       強勁仍在。<br>
-      <span>優雅已然。</span>
+      優雅已然。
     </h2>
 
-    <p class="amonra-final-copy">
+    <div class="amonra-final-copy">
+
       《神之雫》曾將 Amon-Ra 與 Sine Qua Non
       放在同一個天秤上。<br>
+
       而 2022 年的 Amon-Ra，
       讓力量與優雅之間的界線，幾乎消失。
-    </p>
+
+    </div>
+
 
     <a
-      class="amonra-btn"
+      class="amonra-cta"
       href="https://reurl.cc/dO1Rey"
       target="_blank"
       rel="noopener noreferrer"
@@ -1932,7 +1998,7 @@ a{
 </section>
 
 
-<!-- =====================================================
+<!-- ======================================================
      FOOTER
 ====================================================== -->
 
@@ -1948,8 +2014,6 @@ a{
 
 </footer>
 
-
-</div>
 
 </body>
 </html>
