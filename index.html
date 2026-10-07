@@ -16,7 +16,7 @@
 <style>
 
 /* =========================================================
-   GLOBAL
+   基本設定
 ========================================================= */
 
 *{
@@ -61,7 +61,17 @@ a{
 
 
 /* =========================================================
-   COMMON
+   圖片設定
+========================================================= */
+
+.amonra-page{
+  --hero-image:url("https://blog.mychumi.com/wp-content/uploads/2026/10/hero.jpg");
+  --wine-image:url("https://blog.mychumi.com/wp-content/uploads/2026/10/Amon-Ra-2022.jpg");
+}
+
+
+/* =========================================================
+   共用
 ========================================================= */
 
 .amonra-container{
@@ -91,13 +101,10 @@ a{
   letter-spacing:1px;
 }
 
-.amonra-gold{
-  color:var(--gold-light);
-}
-
 
 /* =========================================================
    HERO
+   使用 hero.jpg
 ========================================================= */
 
 .amonra-hero{
@@ -114,7 +121,7 @@ a{
       rgba(0,0,0,.62) 42%,
       rgba(0,0,0,.28) 100%
     ),
-    url("https://blog.mychumi.com/wp-content/uploads/2026/10/Amon-Ra-2022.jpg")
+    var(--hero-image)
     center center / cover no-repeat;
 }
 
@@ -137,15 +144,19 @@ a{
 .amonra-hero-content{
   position:relative;
   z-index:2;
+
   width:min(1180px,90%);
   margin:auto;
+
   padding:120px 0 90px;
 }
 
 .amonra-hero-small{
   color:var(--gold-light);
+
   font-size:13px;
   letter-spacing:6px;
+
   margin-bottom:22px;
 }
 
@@ -153,8 +164,10 @@ a{
   margin:0;
 
   font-family:"Inter",sans-serif;
+
   font-size:clamp(65px,11vw,150px);
   line-height:.9;
+
   font-weight:700;
   letter-spacing:-4px;
 
@@ -165,8 +178,11 @@ a{
   margin-top:22px;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:clamp(20px,3vw,34px);
+
   letter-spacing:5px;
+
   color:var(--gold-light);
 }
 
@@ -176,6 +192,7 @@ a{
   max-width:600px;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:18px;
   line-height:2;
 
@@ -185,6 +202,7 @@ a{
 .amonra-stats{
   display:flex;
   flex-wrap:wrap;
+
   gap:45px;
 
   margin-top:55px;
@@ -192,6 +210,7 @@ a{
 
 .amonra-stat{
   border-left:1px solid var(--gold);
+
   padding-left:17px;
 }
 
@@ -202,6 +221,7 @@ a{
   line-height:1;
 
   color:var(--gold-light);
+
   font-weight:600;
 }
 
@@ -211,17 +231,20 @@ a{
   margin-top:9px;
 
   color:#aaa39a;
+
   font-size:10px;
+
   letter-spacing:1.5px;
 }
 
 
 /* =========================================================
-   AUTHORITY STRIP
+   權威評分
 ========================================================= */
 
 .amonra-authority{
   background:#11100f;
+
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
@@ -243,6 +266,7 @@ a{
 
 .amonra-authority-score{
   color:var(--gold-light);
+
   font-size:27px;
   font-weight:600;
 }
@@ -251,6 +275,7 @@ a{
   margin-top:7px;
 
   color:#eee7dd;
+
   font-size:12px;
   letter-spacing:1px;
 }
@@ -259,6 +284,7 @@ a{
   margin-top:5px;
 
   color:#817b73;
+
   font-size:11px;
 }
 
@@ -269,6 +295,7 @@ a{
 
 .amonra-intro{
   padding:130px 0;
+
   background:
     radial-gradient(
       circle at 80% 30%,
@@ -280,13 +307,17 @@ a{
 
 .amonra-intro-grid{
   display:grid;
+
   grid-template-columns:1fr 1fr;
+
   gap:90px;
+
   align-items:center;
 }
 
 .amonra-intro-number{
   font-size:150px;
+
   line-height:.8;
 
   font-weight:700;
@@ -298,14 +329,18 @@ a{
   margin:15px 0 30px;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:clamp(30px,4vw,48px);
+
   font-weight:500;
+
   line-height:1.4;
 }
 
 
 /* =========================================================
    QUOTE
+   使用 Amon-Ra-2022.jpg
 ========================================================= */
 
 .amonra-quote{
@@ -318,20 +353,25 @@ a{
       rgba(10,10,10,.72),
       rgba(10,10,10,.88)
     ),
-    url("https://blog.mychumi.com/wp-content/uploads/2026/10/Amon-Ra-2022.jpg")
+    var(--wine-image)
     center / cover fixed;
 }
 
 .amonra-quote-inner{
   width:min(900px,90%);
+
   margin:auto;
+
   text-align:center;
 }
 
 .amonra-quote-mark{
   color:var(--gold);
+
   font-family:Georgia,serif;
+
   font-size:90px;
+
   line-height:.5;
 }
 
@@ -339,7 +379,9 @@ a{
   margin:40px 0;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:clamp(22px,3vw,34px);
+
   line-height:1.9;
 
   font-weight:400;
@@ -347,24 +389,30 @@ a{
 
 .amonra-quote cite{
   color:var(--gold-light);
+
   font-size:11px;
+
   letter-spacing:4px;
+
   font-style:normal;
 }
 
 
 /* =========================================================
-   STORY TIMELINE
+   STORY
 ========================================================= */
 
 .amonra-story{
   padding:130px 0;
+
   background:#f3eee5;
+
   color:#171514;
 }
 
 .amonra-story-header{
   max-width:700px;
+
   margin-bottom:80px;
 }
 
@@ -374,8 +422,11 @@ a{
 
 .amonra-story-header h2{
   font-family:"Noto Serif TC",serif;
+
   font-size:clamp(32px,5vw,55px);
+
   font-weight:500;
+
   line-height:1.4;
 }
 
@@ -387,6 +438,7 @@ a{
   content:"";
 
   position:absolute;
+
   left:105px;
   top:0;
   bottom:0;
@@ -398,6 +450,7 @@ a{
 
 .amonra-timeline-item{
   display:grid;
+
   grid-template-columns:210px 1fr;
 
   position:relative;
@@ -407,12 +460,15 @@ a{
 
 .amonra-timeline-year{
   color:#927747;
+
   font-size:13px;
+
   letter-spacing:3px;
 }
 
 .amonra-timeline-content{
   position:relative;
+
   padding-left:40px;
 }
 
@@ -436,7 +492,9 @@ a{
   margin:0 0 12px;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:25px;
+
   font-weight:500;
 }
 
@@ -446,12 +504,15 @@ a{
   max-width:700px;
 
   color:#615c55;
+
   line-height:2;
 }
 
 
 /* =========================================================
    TERROIR
+   改用 Amon-Ra-2022.jpg
+   不再使用不存在的 Barossa-Valley-Ebenezer.jpg
 ========================================================= */
 
 .amonra-terroir{
@@ -465,16 +526,17 @@ a{
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.9),
-      rgba(0,0,0,.5),
-      rgba(0,0,0,.2)
+      rgba(0,0,0,.92),
+      rgba(0,0,0,.62),
+      rgba(0,0,0,.3)
     ),
-    url("https://blog.mychumi.com/wp-content/uploads/2026/10/Barossa-Valley-Ebenezer.jpg")
+    var(--wine-image)
     center / cover no-repeat;
 }
 
 .amonra-terroir-content{
   width:min(1180px,90%);
+
   margin:auto;
 }
 
@@ -486,14 +548,19 @@ a{
   margin:0 0 30px;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:clamp(36px,5vw,65px);
+
   font-weight:500;
+
   line-height:1.35;
 }
 
 .amonra-terroir-grid{
   display:grid;
+
   grid-template-columns:repeat(2,1fr);
+
   gap:15px;
 
   margin-top:45px;
@@ -503,6 +570,7 @@ a{
   padding:22px;
 
   background:rgba(0,0,0,.5);
+
   border:1px solid var(--line);
 }
 
@@ -512,12 +580,15 @@ a{
   margin-bottom:7px;
 
   color:var(--gold-light);
+
   font-size:25px;
 }
 
 .amonra-terroir-card span{
   color:#aaa39a;
+
   font-size:11px;
+
   letter-spacing:1px;
 }
 
@@ -528,11 +599,13 @@ a{
 
 .amonra-winemaking{
   padding:130px 0;
+
   background:#11100f;
 }
 
 .amonra-winemaking-header{
   max-width:750px;
+
   margin-bottom:70px;
 }
 
@@ -540,13 +613,17 @@ a{
   margin:0;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:clamp(34px,5vw,58px);
+
   font-weight:500;
 }
 
 .amonra-process-grid{
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
+
   gap:1px;
 
   background:var(--line);
@@ -554,6 +631,7 @@ a{
 
 .amonra-process{
   min-height:250px;
+
   padding:35px;
 
   background:#11100f;
@@ -561,7 +639,9 @@ a{
 
 .amonra-process-number{
   color:var(--gold);
+
   font-size:12px;
+
   letter-spacing:3px;
 }
 
@@ -569,7 +649,9 @@ a{
   margin:35px 0 15px;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:23px;
+
   font-weight:500;
 }
 
@@ -577,7 +659,9 @@ a{
   margin:0;
 
   color:#969087;
+
   font-size:13px;
+
   line-height:1.9;
 }
 
@@ -594,6 +678,7 @@ a{
 
 .amonra-tasting-header{
   text-align:center;
+
   margin-bottom:70px;
 }
 
@@ -601,13 +686,17 @@ a{
   margin:0;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:clamp(35px,5vw,58px);
+
   font-weight:500;
 }
 
 .amonra-tasting-grid{
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
+
   gap:18px;
 }
 
@@ -643,7 +732,9 @@ a{
 
 .amonra-tasting-number{
   color:var(--gold);
+
   font-size:11px;
+
   letter-spacing:3px;
 }
 
@@ -651,13 +742,17 @@ a{
   margin:45px 0 15px;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:25px;
+
   font-weight:500;
 }
 
 .amonra-tasting-card p{
   color:#99938a;
+
   line-height:1.9;
+
   font-size:13px;
 }
 
@@ -689,6 +784,7 @@ a{
   border:1px solid var(--gold);
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
@@ -699,6 +795,7 @@ a{
   transform:rotate(-45deg);
 
   color:var(--gold-light);
+
   font-size:40px;
 }
 
@@ -706,21 +803,27 @@ a{
   margin:0 0 25px;
 
   font-family:"Noto Serif TC",serif;
+
   font-size:clamp(36px,5vw,60px);
+
   font-weight:500;
 }
 
 .amonra-eye-description{
   max-width:700px;
+
   margin:auto;
 
   color:#aaa39a;
+
   line-height:2;
 }
 
 .amonra-senses{
   display:grid;
+
   grid-template-columns:repeat(6,1fr);
+
   gap:10px;
 
   margin-top:70px;
@@ -732,7 +835,9 @@ a{
   border-top:1px solid var(--line);
 
   color:#9f978c;
+
   font-size:11px;
+
   letter-spacing:2px;
 }
 
@@ -743,6 +848,7 @@ a{
 
 /* =========================================================
    FINAL CTA
+   使用 hero.jpg
 ========================================================= */
 
 .amonra-final{
@@ -757,7 +863,7 @@ a{
       rgba(0,0,0,.65),
       rgba(0,0,0,.9)
     ),
-    url("https://blog.mychumi.com/wp-content/uploads/2026/10/Amon-Ra-2022.jpg")
+    var(--hero-image)
     center / cover no-repeat;
 }
 
@@ -867,8 +973,8 @@ a{
 
 
 /* =========================================================
-   FLOATING CONSULTATION BUTTON
-   高反差版本
+   右側浮動洽詢按鈕
+   高反差香檳金
 ========================================================= */
 
 .amonra-chatwoot-float{
@@ -904,6 +1010,7 @@ a{
   color:#090909;
 
   border:1px solid #f4dfae;
+
   border-right:none;
 
   border-radius:10px 0 0 10px;
@@ -914,9 +1021,6 @@ a{
 
   transition:all .3s ease;
 }
-
-
-/* 滑過去 */
 
 .amonra-chatwoot-float:hover{
   width:62px;
@@ -936,9 +1040,6 @@ a{
     0 0 28px rgba(228,201,141,.45);
 }
 
-
-/* 星號 */
-
 .amonra-chatwoot-icon{
   font-size:18px;
 
@@ -946,9 +1047,6 @@ a{
 
   color:#090909;
 }
-
-
-/* 直式文字 */
 
 .amonra-chatwoot-text{
   writing-mode:vertical-rl;
@@ -975,6 +1073,7 @@ a{
 
   .amonra-intro-grid{
     grid-template-columns:1fr;
+
     gap:30px;
   }
 
@@ -993,6 +1092,7 @@ a{
   .amonra-senses{
     grid-template-columns:repeat(3,1fr);
   }
+
 }
 
 
@@ -1007,7 +1107,7 @@ a{
         rgba(0,0,0,.45),
         rgba(0,0,0,.88)
       ),
-      url("https://blog.mychumi.com/wp-content/uploads/2026/10/Amon-Ra-2022.jpg")
+      var(--hero-image)
       center / cover no-repeat;
   }
 
@@ -1017,11 +1117,13 @@ a{
 
   .amonra-hero h1{
     font-size:68px;
+
     letter-spacing:-3px;
   }
 
   .amonra-hero-subtitle{
     font-size:19px;
+
     letter-spacing:3px;
   }
 
@@ -1031,6 +1133,7 @@ a{
 
   .amonra-stats{
     gap:25px;
+
     margin-top:40px;
   }
 
@@ -1047,6 +1150,7 @@ a{
 
   .amonra-authority-item{
     border-right:0;
+
     border-bottom:1px solid var(--line);
   }
 
@@ -1063,7 +1167,9 @@ a{
 
   .amonra-timeline-item{
     grid-template-columns:1fr;
+
     padding-left:25px;
+
     padding-bottom:50px;
   }
 
@@ -1112,7 +1218,7 @@ a{
   }
 
 
-  /* Floating button */
+  /* 浮動按鈕 */
 
   .amonra-chatwoot-float{
     top:auto;
@@ -1125,6 +1231,7 @@ a{
     flex-direction:row;
 
     width:auto;
+
     min-height:auto;
 
     padding:13px 20px;
@@ -1171,6 +1278,7 @@ a{
 
   .amonra-stats{
     display:grid;
+
     grid-template-columns:1fr 1fr;
   }
 
@@ -1202,7 +1310,7 @@ a{
 
 
 <!-- =====================================================
-     FLOATING CONSULTATION BUTTON
+     浮動式線上洽詢
 ====================================================== -->
 
 <a
@@ -1219,6 +1327,7 @@ a{
 
 <!-- =====================================================
      HERO
+     hero.jpg
 ====================================================== -->
 
 <section class="amonra-hero">
@@ -1280,33 +1389,53 @@ a{
   <div class="amonra-container amonra-authority-inner">
 
     <div class="amonra-authority-item">
-      <div class="amonra-authority-score">96</div>
+
+      <div class="amonra-authority-score">
+        96
+      </div>
+
       <div class="amonra-authority-name">
         ROBERT PARKER WINE ADVOCATE
       </div>
+
       <div class="amonra-authority-year">
         2022 Vintage
       </div>
+
     </div>
 
+
     <div class="amonra-authority-item">
-      <div class="amonra-authority-score">96</div>
+
+      <div class="amonra-authority-score">
+        96
+      </div>
+
       <div class="amonra-authority-name">
         HALLIDAY WINE COMPANION
       </div>
+
       <div class="amonra-authority-year">
         2022 Vintage
       </div>
+
     </div>
 
+
     <div class="amonra-authority-item">
-      <div class="amonra-authority-score">100</div>
+
+      <div class="amonra-authority-score">
+        100
+      </div>
+
       <div class="amonra-authority-name">
         ROBERT PARKER
       </div>
+
       <div class="amonra-authority-year">
         Historic · 2003 Amon-Ra
       </div>
+
     </div>
 
   </div>
@@ -1329,6 +1458,7 @@ a{
       </div>
 
     </div>
+
 
     <div>
 
@@ -1503,6 +1633,7 @@ a{
 
 <!-- =====================================================
      TERROIR
+     Amon-Ra-2022.jpg
 ====================================================== -->
 
 <section class="amonra-terroir">
@@ -1851,6 +1982,7 @@ a{
 
 <!-- =====================================================
      FINAL CTA
+     使用 hero.jpg
 ====================================================== -->
 
 <section class="amonra-final">
