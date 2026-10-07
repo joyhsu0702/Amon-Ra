@@ -15,10 +15,6 @@
 
 <style>
 
-/* =========================================================
-   基本設定
-========================================================= */
-
 *{
   box-sizing:border-box;
 }
@@ -61,17 +57,6 @@ a{
 
 
 /* =========================================================
-   GitHub 圖片設定
-   圖片與 index.html 放在同一層
-========================================================= */
-
-.amonra-page{
-  --hero-image:url("./hero.jpg");
-  --wine-image:url("./Amon-Ra-2022.jpg");
-}
-
-
-/* =========================================================
    共用
 ========================================================= */
 
@@ -98,7 +83,7 @@ a{
 
 /* =========================================================
    HERO
-   使用 GitHub：hero.jpg
+   GitHub：hero.jpg
 ========================================================= */
 
 .amonra-hero{
@@ -115,7 +100,7 @@ a{
       rgba(0,0,0,.62) 42%,
       rgba(0,0,0,.28) 100%
     ),
-    var(--hero-image)
+    url("./hero.jpg")
     center center / cover no-repeat;
 }
 
@@ -320,7 +305,7 @@ a{
 
 /* =========================================================
    QUOTE
-   使用 GitHub：Amon-Ra-2022.jpg
+   GitHub：Amon-Ra-2022.jpg
 ========================================================= */
 
 .amonra-quote{
@@ -333,7 +318,7 @@ a{
       rgba(10,10,10,.72),
       rgba(10,10,10,.88)
     ),
-    var(--wine-image)
+    url("./Amon-Ra-2022.jpg")
     center / cover no-repeat;
 }
 
@@ -489,7 +474,7 @@ a{
 
 /* =========================================================
    TERROIR
-   使用 GitHub：Amon-Ra-2022.jpg
+   GitHub：Amon-Ra-2022.jpg
 ========================================================= */
 
 .amonra-terroir{
@@ -507,7 +492,7 @@ a{
       rgba(0,0,0,.62),
       rgba(0,0,0,.3)
     ),
-    var(--wine-image)
+    url("./Amon-Ra-2022.jpg")
     center / cover no-repeat;
 }
 
@@ -824,7 +809,7 @@ a{
 
 /* =========================================================
    FINAL CTA
-   使用 GitHub：hero.jpg
+   GitHub：hero.jpg
 ========================================================= */
 
 .amonra-final{
@@ -839,7 +824,7 @@ a{
       rgba(0,0,0,.65),
       rgba(0,0,0,.9)
     ),
-    var(--hero-image)
+    url("./hero.jpg")
     center / cover no-repeat;
 }
 
@@ -950,7 +935,6 @@ a{
 
 /* =========================================================
    浮動式線上洽詢
-   高反差香檳金
 ========================================================= */
 
 .amonra-chatwoot-float{
@@ -1049,7 +1033,6 @@ a{
 
   .amonra-intro-grid{
     grid-template-columns:1fr;
-
     gap:30px;
   }
 
@@ -1083,7 +1066,7 @@ a{
         rgba(0,0,0,.45),
         rgba(0,0,0,.88)
       ),
-      var(--hero-image)
+      url("./hero.jpg")
       center / cover no-repeat;
   }
 
@@ -1107,7 +1090,6 @@ a{
 
   .amonra-stats{
     gap:25px;
-
     margin-top:40px;
   }
 
@@ -1124,7 +1106,6 @@ a{
 
   .amonra-authority-item{
     border-right:0;
-
     border-bottom:1px solid var(--line);
   }
 
@@ -1141,9 +1122,7 @@ a{
 
   .amonra-timeline-item{
     grid-template-columns:1fr;
-
     padding-left:25px;
-
     padding-bottom:50px;
   }
 
@@ -1251,7 +1230,6 @@ a{
 
   .amonra-stats{
     display:grid;
-
     grid-template-columns:1fr 1fr;
   }
 
@@ -1300,7 +1278,6 @@ a{
 
 <!-- =====================================================
      HERO
-     hero.jpg
 ====================================================== -->
 
 <section class="amonra-hero">
@@ -1327,7 +1304,6 @@ a{
 
       <div class="amonra-stat">
         <span class="amonra-stat-number">96</span>
-
         <span class="amonra-stat-label">
           ROBERT PARKER WINE ADVOCATE
         </span>
@@ -1335,7 +1311,6 @@ a{
 
       <div class="amonra-stat">
         <span class="amonra-stat-number">96</span>
-
         <span class="amonra-stat-label">
           JAMES HALLIDAY
         </span>
@@ -1343,7 +1318,6 @@ a{
 
       <div class="amonra-stat">
         <span class="amonra-stat-number">2037</span>
-
         <span class="amonra-stat-label">
           DRINKING WINDOW
         </span>
@@ -1365,10 +1339,7 @@ a{
   <div class="amonra-container amonra-authority-inner">
 
     <div class="amonra-authority-item">
-
-      <div class="amonra-authority-score">
-        96
-      </div>
+      <div class="amonra-authority-score">96</div>
 
       <div class="amonra-authority-name">
         ROBERT PARKER WINE ADVOCATE
@@ -1377,15 +1348,11 @@ a{
       <div class="amonra-authority-year">
         2022 Vintage
       </div>
-
     </div>
 
 
     <div class="amonra-authority-item">
-
-      <div class="amonra-authority-score">
-        96
-      </div>
+      <div class="amonra-authority-score">96</div>
 
       <div class="amonra-authority-name">
         HALLIDAY WINE COMPANION
@@ -1394,15 +1361,11 @@ a{
       <div class="amonra-authority-year">
         2022 Vintage
       </div>
-
     </div>
 
 
     <div class="amonra-authority-item">
-
-      <div class="amonra-authority-score">
-        100
-      </div>
+      <div class="amonra-authority-score">100</div>
 
       <div class="amonra-authority-name">
         ROBERT PARKER
@@ -1411,7 +1374,6 @@ a{
       <div class="amonra-authority-year">
         Historic · 2003 Amon-Ra
       </div>
-
     </div>
 
   </div>
@@ -1465,7 +1427,6 @@ a{
 
 <!-- =====================================================
      QUOTE
-     Amon-Ra-2022.jpg
 ====================================================== -->
 
 <section class="amonra-quote">
@@ -1610,7 +1571,6 @@ a{
 
 <!-- =====================================================
      TERROIR
-     使用 Amon-Ra-2022.jpg
 ====================================================== -->
 
 <section class="amonra-terroir">
@@ -1641,46 +1601,23 @@ a{
       <div class="amonra-terroir-grid">
 
         <div class="amonra-terroir-card">
-
           <strong>50–130</strong>
-
-          <span>
-            VINE AGE · YEARS
-          </span>
-
+          <span>VINE AGE · YEARS</span>
         </div>
 
-
         <div class="amonra-terroir-card">
-
           <strong>2 t/ha</strong>
-
-          <span>
-            APPROX. YIELD
-          </span>
-
+          <span>APPROX. YIELD</span>
         </div>
 
-
         <div class="amonra-terroir-card">
-
           <strong>100%</strong>
-
-          <span>
-            NEW OAK
-          </span>
-
+          <span>NEW OAK</span>
         </div>
 
-
         <div class="amonra-terroir-card">
-
           <strong>16</strong>
-
-          <span>
-            MONTHS IN OAK
-          </span>
-
+          <span>MONTHS IN OAK</span>
         </div>
 
       </div>
@@ -1959,7 +1896,6 @@ a{
 
 <!-- =====================================================
      FINAL CTA
-     使用 hero.jpg
 ====================================================== -->
 
 <section class="amonra-final">
